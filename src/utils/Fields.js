@@ -1,0 +1,27 @@
+export const Fields = [
+    {
+        icon:require("../../assets/images/icons/mobile-programming-01.svg"),
+        bgColor:"#2B82FB",
+        fieldTitle:"Mobile",
+    },
+    {
+        icon:require("../../assets/images/icons/web-design-01.svg"),
+        bgColor:"#FFBA00",
+        fieldTitle:"Web",
+    },
+    {
+        icon:require("../../assets/images/icons/gameboy.svg"),
+        bgColor:"#2B82FB",
+        fieldTitle:"GameDev",
+    },
+    {
+        icon:require("../../assets/images/icons/developer.svg"),
+        bgColor:"#FFBA00",
+        fieldTitle:"Ai",
+    },
+    {
+        icon:require("../../assets/images/icons/web-security.svg"),
+        bgColor:"#2B82FB",
+        fieldTitle:"Security",
+    },
+]

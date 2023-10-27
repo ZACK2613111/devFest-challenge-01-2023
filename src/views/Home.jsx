@@ -1,31 +1,65 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, FlatList, StyleSheet } from 'react-native';
 import Header from '../components/Header';
+import Field from '../components/Field';
 import EventCard from '../components/Cards/EventCard';
-import { Events } from '../utils/EventCard';
 import AdsCard from '../components/Cards/AdsCard';
+import { Events } from '../utils/EventCard';
+import { Fields } from '../utils/Fields';
 
 const Home = () => {
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <View style={styles.container}>
       <Header />
-      <View style={styles.adsContainer}>
-        <AdsCard title="HERE" description="You awaited Event Finally" />
-      </View>
-      {Events.map((event) => (
-        <EventCard
-          logo={event.logo}
-          title={event.title}
-          description={event.description}
-        />
-      ))}
-    </ScrollView>
+      <AdsCard title="HERE" description="You awaited Event Finally" />
+      <Text style={styles.fieldTitle}>Our Fields</Text>
+      <View>
+        <FlatList
+        data={Fields}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => (
+          <Field
+          icon={item.icon}
+          backgroundColor={item.bgColor}
+          title={item.fieldTitle}
+          />
+          )}
+          contentContainerStyle={styles.flatListContent}
+          />
+        </View>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.eventsContainer}>
+        {Events.map((event, index) => (
+          <EventCard
+            key={index}
+            logo={event.logo}
+            title={event.title}
+            description={event.description}
+          />
+        ))}
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  adsContainer: {
-    alignItems: 'center', // Center the AdsCard horizontally
+  container: {
+    flex: 1,
+  },
+  fieldTitle: {
+    fontFamily: 'DevFest',
+    fontSize: 22,
+    fontWeight: '400',
+    lineHeight: 22,
+    margin: 10,
+  },
+  eventsContainer: {
+    flex: 1,
+  },
+  flatListContent: {
+    marginLeft: 10, // Added margin to the FlatList
+    marginRight: 10,
   },
 });
 

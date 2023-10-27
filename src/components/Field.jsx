@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const Field = ({ icon, backgroundColor, title }) => {
+const Field = ({ icon, backgroundColor, title, onPress }) => {
   return (
-    <View style={[styles.container, { backgroundColor }]}>
-      <View style={styles.iconContainer}>
-        {icon && <Image source={icon} style={styles.icon} />}
+    <TouchableOpacity onPress={onPress} style={styles.container}>
+      <View style={[styles.iconContainer, { backgroundColor }]}>
+        <Image source={icon} style={styles.icon} />
       </View>
       <Text style={styles.title}>{title}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -16,23 +16,28 @@ const styles = StyleSheet.create({
   container: {
     width: 140,
     height: 97,
-    borderRadius: 8, // Add a border radius to round the corners
+    borderRadius: 8,
+    margin: 10, // Add margin to center vertically and horizontally
+    justifyContent: 'center', // Center content vertically
+    alignItems: 'center', // Center content horizontally
+    backgroundColor: '#FFFFFF',
   },
   iconContainer: {
-    position: 'relative',
+    width: 32,
+    height: 32,
   },
   icon: {
     width: 32,
     height: 32,
-    position: 'absolute',
-    top: 17,
-    left: 54,
   },
   title: {
-    fontSize: 14,
-    fontWeight: '500',
-    color: '#FFFFFF',
+    fontSize: 17,
+    fontWeight: '400',
+    lineHeight: 22,
+    fontFamily: 'DevFest',
+    color: '#000000',
     textAlign: 'center',
+    marginTop: 5,
   },
 });
 
