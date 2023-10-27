@@ -1,14 +1,22 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import Header from '../components/Header'
+import React from 'react';
+import { View, Text, ScrollView } from 'react-native';
+import Header from '../components/Header';
+import EventCard from '../components/Cards/EventCard';
+import { Events } from '../utils/EventCard';
 
 const Home = () => {
   return (
-    <View>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <Header />
-      <Text>Home</Text>
-    </View>
-  )
-}
+      {Events.map((event) => (
+        <EventCard
+          logo={event.logo}
+          title={event.title}
+          description={event.description}
+        />
+      ))}
+    </ScrollView>
+  );
+};
 
-export default Home
+export default Home;
