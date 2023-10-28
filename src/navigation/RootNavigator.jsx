@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import DrawerNavigator from './DrawerNavigator';
 
-import {Home, SplashScreen} from '../views'
+import {AboutUs, Home, SplashScreen} from '../views'
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +13,7 @@ function RootNavigator() {
       <Stack.Navigator>
         <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+        <Stack.Screen name="AboutUs" component={AboutUs} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

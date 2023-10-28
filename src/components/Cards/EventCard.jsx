@@ -45,9 +45,10 @@ const styles = StyleSheet.create({
     lineHeight: 32,
   },
   description: {
-    fontSize: 11, // Updated font size
+    fontSize: 16, // Updated font size
     lineHeight: 22, // Updated line height
     fontWeight: '500', // Updated font weight
+    fontFamily: 'DevFest', // You should define the 'DevFest' font
 },
 });
 

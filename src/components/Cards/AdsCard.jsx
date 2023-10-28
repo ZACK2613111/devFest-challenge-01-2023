@@ -59,14 +59,17 @@ const styles = StyleSheet.create({
     fontSize: 20,
     lineHeight: 28,
     fontWeight: '400',
+    fontFamily:"DevFest",
     textAlign: 'center', // Center the description text
     marginBottom: 10, // Add margin between description and title
   },
   title: {
     color: '#FFBA00',
-    fontWeight: '500',
+    fontWeight: '700',
     fontSize: 22,
     lineHeight: 28,
+    fontStyle:'bold',
+    fontFamily:"DevFest",
     textAlign: 'center', // Center the title text
   },
   topRight: {
