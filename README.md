@@ -42,6 +42,7 @@ cd devFest-challenge-01-2023
 # Start the app
 npx expo start # or yarn start or pnpm start
 
+```
 ## Contributing
 
 If you'd like to contribute to this project, follow these steps:
